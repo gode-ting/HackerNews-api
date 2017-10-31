@@ -64,7 +64,7 @@ An example of a comment:
 
 ## User Endpoints
 
-__User endpoints - authentication__
+Authentication
 
 | Method | Endpoint | Description | Status code on success |
 | --- | --- | --- | --- |
