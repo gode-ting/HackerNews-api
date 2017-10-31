@@ -64,7 +64,7 @@ An example of a comment:
 
 ## Endpoints
 
-User endpoints - authentication
+__User endpoints - authentication__
 
 | Method | Endpoint | Description | Status code on success |
 | --- | --- | --- | --- |
@@ -72,7 +72,16 @@ User endpoints - authentication
 | POST | /users/signup | Sign up a new user | 200 |
 </br>
 
-Login example:
+__Signup example:__
+
+```sh
+curl -H "Content-Type: application/json" -X POST -d '{
+    "username" : "username",
+    "password" : "password"
+}'  http://{ip_address}:{port_number}/users/signup
+```
+
+__Login Example__
 
 ```sh
 curl -H "Content-Type: application/json" -X POST -d '{
@@ -81,7 +90,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
 }'  http://{ip_address}:{port_number}/login
 ```
 
-Post endpoints
+__Post endpoints__
 
 | Method | Endpoint | Description | Parameters | Result |
 | --- | --- | --- | --- | --- |
@@ -90,13 +99,4 @@ Post endpoints
 | PUT | /user/<public_id> | promote user to admin | `public_id` | --- |
 | DELETE | /user/<public_id> | deletes a user | `public_id` | --- |
 </br>
-
-Todo routes
-
-| Method | Endpoint | Description | Parameters | Result |
-| --- | --- | --- | --- | --- |
-| GET | /todo | get all users | --- | list of todo items | 
-| GET | /todo/<todo_id> | get a single todo item | `public_id` | todo item |
-| PUT | /todo/<todo_id> | complete todo item | `todo_id` | --- |
-| DELETE | /todo/<todo_id> | deletes todo item | `public_id` | --- |
 
