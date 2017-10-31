@@ -2,82 +2,7 @@
 
 This is a simple api for a todo list app. It contains basic CRUD operations and handles user authentication and authorization.
 </br>
-</br>
-
-## Installation
-
-clone the repository
-
-```sh
-
-$ cd to/your/favorite/path
-
-$ git clone https://github.com/emilgras/simple-flask-auth.git
-
-$ cd simple-flask-aut
-
-```
-
-create and activate a local virtual environment
-
-```sh
-
-$ python3 -m venv venv
-
-$ source venv/bin/activate
-
-```
-
-Install dependencies from `requirements.txt`
-
-```sh
-
-(venv) $ pip install -r requirements.txt
-
-```
-</br>
-
-## Running the project
-
-Start the python interpreter and create the database
-
-```sh
-
-(venv) $ python
-
->>> from api import db
-
->>> db.create_all()
-
->>> exit()
-
-```
-
-(optional) Start the sqlite3 command line and verify that 2 tables has been created `user` & `todo`
-
-```sh
-
-(venv) $ sqlite3
-
->>> .tables
-
-```
-
-Exit the sqlite command line
-
-```sh
-
->>> .exit
-
-```
-Start the application 
-
-```sh
-
-(venv) $ python api.py
-
-```
-</br>
+</br>  
 
 ## Items
 
@@ -128,17 +53,35 @@ An example of a comment:
 
 ```
 
+## Status codes
+
+| Code | Description |
+| --- | --- |
+| 200 | Success |
+| 201 | Created |
+| 400 | Bad request. client issue. |
+| 500 | Internal server error |
+
 ## Endpoints
 
-Authentication routes
+User endpoints - authentication
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| POST | /login | log's in a user |
-| POST | /register | creates a new user with no access token |
+| Method | Endpoint | Description | Status code on success |
+| --- | --- | --- | --- |
+| POST | /login | Login a user | 200 |
+| POST | /users/signup | Sign up a new user | 200 |
 </br>
 
-Admin routes
+Login example:
+
+```sh
+curl -H "Content-Type: application/json" -X POST -d '{
+    "username" : "username",
+    "password" : "password"
+}'  http://{ip_address}:{port_number}/login
+```
+
+Post endpoints
 
 | Method | Endpoint | Description | Parameters | Result |
 | --- | --- | --- | --- | --- |
