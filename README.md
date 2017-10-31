@@ -64,7 +64,7 @@ Authentication
 | Method | Endpoint | Description | Status code on success |
 | --- | --- | --- | --- |
 | POST | /login | Login a user | 200 |
-| POST | /users/signup | Sign up a new user | 200 |
+| POST | /signup | Sign up a new user | 200 |
 </br>
 
 Signup example:
@@ -73,7 +73,7 @@ Signup example:
 curl -H "Content-Type: application/json" -X POST -d '{
     "username" : "username",
     "password" : "password"
-}'  http://{ip_address}:{port_number}/users/signup
+}'  http://{ip_address}:{port_number}/signup
 ```
 
 Login Example
@@ -85,7 +85,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
 }'  http://{ip_address}:{port_number}/login
 ```
 
-When you log in successfully you will receive a Token in the response header looking like this `Authorization: Bearer xxx.yyy.zzz`
+When you log in successfully you will receive a Token in the response header looking like this `Authorization: Bearer  xxx.yyy.zzz`
 
 Important authentication http status codes
 
