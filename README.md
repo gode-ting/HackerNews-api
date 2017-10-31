@@ -79,6 +79,21 @@ Start the application
 ```
 </br>
 
+## Items
+
+Stories, comments, jobs, Ask HNs and even polls are just items. They're identified by their ids, which are unique integers. All items have some of the following properties:
+
+| Method | Endpoint |
+| --- | --- |
+| id | The item's unique id. |
+| type | The type of item. i.e. "story, comment, poll" |
+| username | The username of the item's author |
+| text | The comment, story or poll |
+| parent | The comment's parent id. The parent could be  another comment or a story |
+| url | The URL of the story |
+| title | The title of the story, poll or job |
+</br>
+
 ## Endpoints
 
 Authentication routes
