@@ -30,7 +30,6 @@ An example of a story:
     "post_title": "Student Guide 102",
     "post_text": "Good  stuff",
     "post_url": "http://www.google.com",
-    "hanesst_id": 23,
     "post_parent": -1
 }
 
@@ -47,7 +46,6 @@ An example of a comment:
     "post_title": "The Worlds Greatest Title",
     "post_text": "Awesome commnt text",
     "post_url": "http://www.yahoo.com",
-    "hanesst_id": 26,
     "post_parent": 23
 }
 
