@@ -51,21 +51,33 @@ An example of a comment:
     "post_parent": 23
 }
 
-```
-
-## Status codes
-
-
+```  
 
 ## User Endpoints
 
 Authentication
 
-| Method | Endpoint | Description | Status code on success |
-| --- | --- | --- | --- |
-| POST | /login | Login a user | 200 |
-| POST | /signup | Sign up a new user | 200 |
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| POST | /login | Login a user |
+| POST | /signup | Sign up a new user |
 </br>
+
+Important `/signup` status codes
+
+| Code | Description |
+| --- | --- |
+| 200 | Success |
+| 400 | Bad crednetials. User entered incorrect input |
+| 500 | Server error |
+
+Important `/login` status codes
+
+| Code | Description |
+| --- | --- |
+| 200 | Success |
+| 401 | Bad credentials. Incorrect username or password |
+| 500 | Server error |
 
 Signup example:
 
@@ -86,14 +98,6 @@ curl -H "Content-Type: application/json" -X POST -d '{
 ```
 
 When you log in successfully you will receive a Token in the response header looking like this `Authorization: Bearer  xxx.yyy.zzz`
-
-Important authentication http status codes
-
-| Code | Description |
-| --- | --- |
-| 200 | Success |
-| 400 | Bad credentials. Credentials are not correctly formatted |
-| 500 | Internal server error |
 
 ## Post endpoints
 
