@@ -72,7 +72,7 @@ __User endpoints - authentication__
 | POST | /users/signup | Sign up a new user | 200 |
 </br>
 
-__Signup example:__
+Signup example:
 
 ```sh
 curl -H "Content-Type: application/json" -X POST -d '{
@@ -81,7 +81,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
 }'  http://{ip_address}:{port_number}/users/signup
 ```
 
-__Login Example__
+Login Example
 
 ```sh
 curl -H "Content-Type: application/json" -X POST -d '{
@@ -100,7 +100,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
 | DELETE | /user/<public_id> | deletes a user | `public_id` | --- |
 </br>
 
-__Signup example:__
+Signup example:
 
 ```sh
 curl -H "Content-Type: application/json" -X POST -d '{
@@ -109,7 +109,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
 }'  http://{ip_address}:{port_number}/users/signup
 ```
 
-__Login Example__
+Login Example
 
 ```sh
 curl -H "Content-Type: application/json" -X POST -d '{
