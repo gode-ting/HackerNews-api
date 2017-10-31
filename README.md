@@ -62,7 +62,7 @@ An example of a comment:
 | 400 | Bad request. client issue. |
 | 500 | Internal server error |
 
-## Endpoints
+## User Endpoints
 
 __User endpoints - authentication__
 
@@ -90,7 +90,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
 }'  http://{ip_address}:{port_number}/login
 ```
 
-__Post endpoints__
+## Post endpoints
 
 | Method | Endpoint | Description | Parameters | Result |
 | --- | --- | --- | --- | --- |
@@ -99,4 +99,21 @@ __Post endpoints__
 | PUT | /user/<public_id> | promote user to admin | `public_id` | --- |
 | DELETE | /user/<public_id> | deletes a user | `public_id` | --- |
 </br>
+
+__Signup example:__
+
+```sh
+curl -H "Content-Type: application/json" -X POST -d '{
+    "username" : "username",
+    "password" : "password"
+}'  http://{ip_address}:{port_number}/users/signup
+```
+
+__Login Example__
+
+```sh
+curl -H "Content-Type: application/json" -X POST -d '{
+    "username" : "username",
+    "password" : "password"
+}'  ht
 
