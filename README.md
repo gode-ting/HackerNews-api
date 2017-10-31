@@ -99,15 +99,31 @@ An example of a story:
 ```javascript
 
 {
-  "by" : "dhouston",
-  "descendants" : 71,
-  "id" : 8863,
-  "kids" : [ 8952, 9224, 8917, 8884, 8887, 8943, 8869, 8958, 9005, 9671, 8940, 9067, 8908, 9055, 8865, 8881, 8872, 8873, 8955, 10403, 8903, 8928, 9125, 8998, 8901, 8902, 8907, 8894, 8878, 8870, 8980, 8934, 8876 ],
-  "score" : 111,
-  "time" : 1175714200,
-  "title" : "My YC app: Dropbox - Throw away your USB drive",
-  "type" : "story",
-  "url" : "http://www.getdropbox.com/u/2/screencast.html"
+    "id": "59f87c655b1dc209f10c0048",
+    "username": "Frank",
+    "post_type": "story",
+    "post_title": "Student Guide 102",
+    "post_text": "Good  stuff",
+    "post_url": "http://www.google.com",
+    "hanesst_id": 23,
+    "post_parent": -1
+}
+
+```
+
+An example of a comment:
+
+```javascript
+
+{
+    "id": "57f87c655b1dc209f10c6527",
+    "username": "BunnyTheRabbit",
+    "post_type": "comment",
+    "post_title": "The Worlds Greatest Title",
+    "post_text": "Awesome commnt text",
+    "post_url": "http://www.yahoo.com",
+    "hanesst_id": 26,
+    "post_parent": 23
 }
 
 ```
