@@ -57,13 +57,13 @@ An example of a comment:
 
 Authentication
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| POST | /login | Login a user |
-| POST | /signup | Sign up a new user |
+| Nr. | Method | Endpoint | Description |
+| --- | --- | --- | --- |
+| 1 | POST | /login | Login a user |
+| 2 | POST | /signup | Sign up a new user |
 </br>
 
-Signup example:
+Example 1 - Signup:
 
 ```sh
 curl -H "Content-Type: application/json" -X POST -d '{
@@ -72,7 +72,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
 }'  http://{ip_address}:{port_number}/signup
 ```
 
-Login Example
+Example 2 - Login
 
 ```sh
 curl -H "Content-Type: application/json" -X POST -d '{
@@ -112,47 +112,42 @@ Important `/login` status codes
 
 Example 1 - Get all posts:
 
-Obs: You have to specify the page number starting from 1. Default page size is 20. This way you can make use of paging to optimze perfomance of your website.
+Obs: You have to specify the page number starting from 1. Default page size is 20. Every page request will return 20 or less posts. This way you can optimze perfomance of your website.
 
 ```sh
-curl -H "Content-Type: application/json" -X POST -d '{
-    "username" : "username",
-    "password" : "password"
-}'  http://{ip_address}:{port_number}/users/signup
+curl http://<ip-address>:<post>/post?page=1
 ```
 
 Example 2 - Get single post by id:
 
 ```sh
-curl -H "Content-Type: application/json" -X POST -d '{
-    "username" : "username",
-    "password" : "password"
-}'  ht
+curl http://<ip-address>:<post>/post?id=dqwdh12e8ewdwjshjk
 ```
 
-Example 3 - Get single post by id:
+Example 3 - Create new post:
+
+Obs: Remeber to switch the token to a valid token. The one provided will not work
 
 ```sh
-curl -H "Content-Type: application/json" -X POST -d '{
-    "username" : "username",
-    "password" : "password"
-}'  ht
+curl -H "Content-Type: application/json" -H @{'Authorization'='Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTUxMDM0MjU0NiwidXNlcm5hbWUiOiJ1c2VybmFtZSJ9.wpBvdhT8-wsp4GfuTIrROCHjK6Vp1ySXJZpNFLT9xcvSQcAPDNLHXkHdc-RPaZC7fwPOlvdFkgrRz1DbEa03sj'} -X POST -d '{
+	"post_title": "My crazy awesome title here", 
+	"post_text": "", 
+	"post_type": "story", 
+	"post_parent": -1,
+	"post_url": "http://www.google.com"
+}'  http://<ip-address>:<post>/post
 ```
 
-Example 4 - Get single post by id:
+Example 4 - Update post by id:
 
 ```sh
-curl -H "Content-Type: application/json" -X POST -d '{
-    "username" : "username",
-    "password" : "password"
-}'  ht
+curl -H "Content-Type: application/json" -X PUT -d '{
+    "post_title": "New awesome title"
+}'  http://<ip-address>:<post>/post?id=q38w4fyiesldhflskedfhk
 ```
 
-Example 5 - Get single post by id:
+Example 5 - Delete post by id:
 
 ```sh
-curl -H "Content-Type: application/json" -X POST -d '{
-    "username" : "username",
-    "password" : "password"
-}'  ht
+curl -X DELETE http://<ip-address>:<post>/post?id=982347r87whf47xcf
 ```
