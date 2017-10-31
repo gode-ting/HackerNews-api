@@ -1,6 +1,6 @@
-# HackerNews API
+# Hacker News API
 
-This is a simple api for a todo list app. It contains basic CRUD operations and handles user authentication and authorization.
+This is the Hacker News api containing detailed description on how to inertact with the api.
 </br>
 </br>  
 
