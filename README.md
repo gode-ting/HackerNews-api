@@ -53,7 +53,7 @@ An example of a comment:
 
 ```  
 
-## User Endpoints
+## User authentication endpoints
 
 Authentication
 
