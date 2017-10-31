@@ -85,7 +85,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
 }'  http://{ip_address}:{port_number}/login
 ```
 
-When you log in successfully you will receive a Token in the response header looking like this
+When you log in successfully you will receive a Token in the response header looking like this `Authorization: Bearer xxx.yyy.zzz`
 
 Important authentication http status codes
 
