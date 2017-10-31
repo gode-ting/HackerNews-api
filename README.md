@@ -102,7 +102,7 @@ Important `/login` status codes
 ## Post endpoints
 
 | Nr. | Method | Endpoint | Description | Return body |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | ---- | -- |
 | 1 | GET | /post?page=<page_number> | Get all posts. | List og post objects. If no results you receive an empty list. |
 | 2 | GET | /post/<post_id> | Get single post by id | Single post object |
 | 3 | POST | /post | Create new post | void |
