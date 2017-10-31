@@ -63,22 +63,6 @@ Authentication
 | POST | /signup | Sign up a new user |
 </br>
 
-Important `/signup` status codes
-
-| Code | Description |
-| --- | --- |
-| 200 | Success |
-| 400 | Bad crednetials. User entered incorrect input |
-| 500 | Server error |
-
-Important `/login` status codes
-
-| Code | Description |
-| --- | --- |
-| 200 | Success |
-| 401 | Bad credentials. Incorrect username or password |
-| 500 | Server error |
-
 Signup example:
 
 ```sh
@@ -99,17 +83,36 @@ curl -H "Content-Type: application/json" -X POST -d '{
 
 When you log in successfully you will receive a Token in the response header looking like this `Authorization: Bearer  xxx.yyy.zzz`
 
+Important `/signup` status codes
+
+| Code | Description |
+| --- | --- |
+| 200 | Success |
+| 400 | Bad crednetials. User entered incorrect input |
+| 500 | Server error |
+
+Important `/login` status codes
+
+| Code | Description |
+| --- | --- |
+| 200 | Success |
+| 401 | Bad credentials. Incorrect username or password |
+| 500 | Server error |
+
 ## Post endpoints
 
-| Method | Endpoint | Description | Parameters | Result |
+| Nr. | Method | Endpoint | Description | Return body |
 | --- | --- | --- | --- | --- |
-| GET | /user | get all users | --- | list of users | 
-| GET | /user/<public_id> | get a single user | `public_id` | single user |
-| PUT | /user/<public_id> | promote user to admin | `public_id` | --- |
-| DELETE | /user/<public_id> | deletes a user | `public_id` | --- |
+| 1 | GET | /post?page=<page_number> | Get all posts. | List og post objects. If no results you receive an empty list. |
+| 2 | GET | /post/<post_id> | Get single post by id | Single post object |
+| 3 | POST | /post | Create new post | void |
+| 4 | PUT | /post/<post_id> | Update post by id | void |
+| 5 | DELETE | /post//<post_id> | Deletes post by id | void |
 </br>
 
-Signup example:
+Example 1 - Get all posts:
+
+Obs: You have to specify the page number starting from 1. Default page size is 20. This way you can make use of paging to optimze perfomance of your website.
 
 ```sh
 curl -H "Content-Type: application/json" -X POST -d '{
@@ -118,11 +121,38 @@ curl -H "Content-Type: application/json" -X POST -d '{
 }'  http://{ip_address}:{port_number}/users/signup
 ```
 
-Login Example
+Example 2 - Get single post by id:
 
 ```sh
 curl -H "Content-Type: application/json" -X POST -d '{
     "username" : "username",
     "password" : "password"
 }'  ht
+```
 
+Example 3 - Get single post by id:
+
+```sh
+curl -H "Content-Type: application/json" -X POST -d '{
+    "username" : "username",
+    "password" : "password"
+}'  ht
+```
+
+Example 4 - Get single post by id:
+
+```sh
+curl -H "Content-Type: application/json" -X POST -d '{
+    "username" : "username",
+    "password" : "password"
+}'  ht
+```
+
+Example 5 - Get single post by id:
+
+```sh
+curl -H "Content-Type: application/json" -X POST -d '{
+    "username" : "username",
+    "password" : "password"
+}'  ht
+```
