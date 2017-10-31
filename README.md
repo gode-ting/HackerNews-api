@@ -55,12 +55,7 @@ An example of a comment:
 
 ## Status codes
 
-| Code | Description |
-| --- | --- |
-| 200 | Success |
-| 201 | Created |
-| 400 | Bad request. client issue. |
-| 500 | Internal server error |
+
 
 ## User Endpoints
 
@@ -89,6 +84,14 @@ curl -H "Content-Type: application/json" -X POST -d '{
     "password" : "password"
 }'  http://{ip_address}:{port_number}/login
 ```
+
+Important authentication http status codes
+
+| Code | Description |
+| --- | --- |
+| 200 | Success |
+| 400 | Bad credentials. Credentials are not correctly formatted |
+| 500 | Internal server error |
 
 ## Post endpoints
 
