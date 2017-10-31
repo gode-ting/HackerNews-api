@@ -85,6 +85,8 @@ curl -H "Content-Type: application/json" -X POST -d '{
 }'  http://{ip_address}:{port_number}/login
 ```
 
+When you log in successfully you will receive a Token in the response header looking like this
+
 Important authentication http status codes
 
 | Code | Description |
