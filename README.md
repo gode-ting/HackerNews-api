@@ -6,7 +6,7 @@ This is the Hacker News api containing detailed description on how to inertact w
 
 ## Items
 
-Stories, comments, jobs, Ask HNs and even polls are just items. They're identified by their ids, which are unique integers. All items have some of the following properties:
+Stories and polls. They're identified by their ids, which are unique integers. All items have some of the following properties:
 
 | Field | Description | Type |
 | --- | --- | --- |
