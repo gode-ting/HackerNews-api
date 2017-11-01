@@ -11,12 +11,16 @@ Stories and polls. They're identified by their ids, which are unique integers. A
 | Field | Description | Type |
 | --- | --- | --- |
 | id | The item's unique id. | String |
-| type | The type of item. i.e. "story, comment, poll" | String |
-| username | The username of the item's author | String |
-| text | The comment, story or poll | String |
 | parent | The comment's parent id. The parent could be  another comment or a story | String |
-| url | The URL of the story | String |
+| username | The username of the item's author | String |
+| type | The type of item. i.e. "story, comment, poll" | String |
 | title | The title of the story, poll or job | String |
+| text | The comment, story or poll | String |
+| url | The URL of the story | String |
+| karma |
+| upvotedBy |
+| downvotedBy |
+| created_at |
 </br>  
 
 An example of a story:
