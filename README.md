@@ -8,15 +8,15 @@ This is the Hacker News api containing detailed description on how to inertact w
 
 Stories, comments, jobs, Ask HNs and even polls are just items. They're identified by their ids, which are unique integers. All items have some of the following properties:
 
-| Field | Description |
-| --- | --- |
-| id | The item's unique id. |
-| type | The type of item. i.e. "story, comment, poll" |
-| username | The username of the item's author |
-| text | The comment, story or poll |
-| parent | The comment's parent id. The parent could be  another comment or a story |
-| url | The URL of the story |
-| title | The title of the story, poll or job |
+| Field | Description | Type |
+| --- | --- | --- |
+| id | The item's unique id. | String |
+| type | The type of item. i.e. "story, comment, poll" | String |
+| username | The username of the item's author | String |
+| text | The comment, story or poll | String |
+| parent | The comment's parent id. The parent could be  another comment or a story | String |
+| url | The URL of the story | String |
+| title | The title of the story, poll or job | String |
 </br>  
 
 An example of a story:
@@ -30,7 +30,7 @@ An example of a story:
     "post_title": "Student Guide 102",
     "post_text": "Good  stuff",
     "post_url": "http://www.google.com",
-    "post_parent": -1
+    "post_parent": ""
 }
 
 ```
@@ -46,7 +46,7 @@ An example of a comment:
     "post_title": "The Worlds Greatest Title",
     "post_text": "Awesome commnt text",
     "post_url": "http://www.yahoo.com",
-    "post_parent": 23
+    "post_parent": "59f87c655b1dc209f10c0048"
 }
 
 ```  
