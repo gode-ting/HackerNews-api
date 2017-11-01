@@ -126,9 +126,11 @@ curl -X GET http://<ip-address>:<post>/post?id=dqwdh12e8ewdwjshjk
 
 Example 3 - Get user by username:
 
+```sh
+curl -X GET http://<ip-address>:<post>/user?username=<username>
+```
 
-
-Example 3 - Create new post:
+Example 4 - Create new post:
 
 Obs: Remeber to switch the token to a valid token. The one provided will not work
 
@@ -142,7 +144,19 @@ curl -H "Content-Type: application/json" -H @{'Authorization'='Bearer eyJhbGciOi
 }'  http://<ip-address>:<post>/post
 ```
 
-Example 4 - Update post by id:
+Example 5 - Upvote or downvote a post:
+
+Obs: the `mode` parameter in the body can either be `up` or `down`.
+
+```sh
+curl -H "Content-Type: application/json" -H @{'Authorization'='Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTUxMDM0MjU0NiwidXNlcm5hbWUiOiJ1c2VybmFtZSJ9.wpBvdhT8-wsp4GfuTIrROCHjK6Vp1ySXJZpNFLT9xcvSQcAPDNLHXkHdc-RPaZC7fwPOlvdFkgrRz1DbEa03sj'} -X POST -d '{
+	"post_id" : "post_id_here",
+	"username" : "current_authenticated_users_username",
+	"mode" : "up"
+}'  http://<ip-address>:<post>/api/post/vote
+```
+
+Example 6 - Update post by id:
 
 ```sh
 curl -H "Content-Type: application/json" -X PUT -d '{
@@ -150,7 +164,7 @@ curl -H "Content-Type: application/json" -X PUT -d '{
 }'  http://<ip-address>:<post>/post?id=q38w4fyiesldhflskedfhk
 ```
 
-Example 5 - Delete post by id:
+Example 7 - Delete post by id:
 
 ```sh
 curl -X DELETE http://<ip-address>:<post>/post?id=982347r87whf47xcf
