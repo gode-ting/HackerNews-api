@@ -58,7 +58,7 @@ Authentication
 | Nr. | Method | Endpoint | Description |
 | --- | --- | --- | --- |
 | 1 | POST | /login | Login a user |
-| 2 | POST | /signup | Sign up a new user |
+| 2 | POST | /user/signup | Sign up a new user |
 </br>
 
 Example 1 - Signup:
@@ -99,13 +99,14 @@ Important `/login` status codes
 
 ## Post endpoints
 
-| Nr. | Method | Endpoint | Description | Return body |
-| --- | --- | --- | --- | --- |
-| 1 | GET | /post?page=<page_number> | Get all posts. | List og post objects. If no results you receive an empty list. |
-| 2 | GET | /post/<post_id> | Get single post by id | Single post object |
-| 3 | POST | /post | Create new post | void |
-| 4 | PUT | /post/<post_id> | Update post by id | void |
-| 5 | DELETE | /post//<post_id> | Deletes post by id | void |
+| Nr. | Method | Endpoint | Description | Return body | Requires authentication |
+| --- | --- | --- | --- | --- | --- |
+| 1 | GET | /post?page=<page_number> | Get all posts. | List og post objects. If no results you receive an empty list. | No |
+| 2 | GET | /post?id=<post_id> | Get single post by id and all child posts | Single post object and a list of comments if any | No |
+| 2 | GET | /post?username=<username> | Get user by username | Single user | No |
+| 3 | POST | /post | Create new post | void | Yes |
+| 4 | PUT | /post/<post_id> | Update post by id | void | Yes |
+| 5 | DELETE | /post//<post_id> | Deletes post by id | void | Yes |
 </br>
 
 Example 1 - Get all posts:
