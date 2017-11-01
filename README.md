@@ -151,3 +151,25 @@ Example 5 - Delete post by id:
 ```sh
 curl -X DELETE http://<ip-address>:<post>/post?id=982347r87whf47xcf
 ```
+
+## Latest Digested Post endpoint
+
+You can retreive the latest digested post by sending a request to the following ednpoint:
+
+```sh
+curl -X GET http://<ip-address>:<post>/latest
+```
+
+## Providing Status Information endpoint
+
+You can check the current status of the api by sedning a request to the following endpoint:
+
+```sh
+curl -X GET http://<ip-address>:<post>/status
+```
+
+The response can either be `Alive`, `Update` or `Down`.
+
+- `Alive` the api is up-and-running
+- `Update` the api is been updated
+- `Down` the api is down for some unknown reason
