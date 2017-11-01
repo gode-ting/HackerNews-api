@@ -51,7 +51,7 @@ An example of a comment:
 
 ```  
 
-## User authentication endpoints
+## User endpoints
 
 Authentication
 
@@ -59,6 +59,7 @@ Authentication
 | --- | --- | --- | --- |
 | 1 | POST | /login | Login a user |
 | 2 | POST | /user/signup | Sign up a new user |
+| 3 | GET | /user | Get user by username |
 </br>
 
 Example 1 - Signup:
@@ -77,6 +78,12 @@ curl -H "Content-Type: application/json" -X POST -d '{
     "username" : "username",
     "password" : "password"
 }'  http://{ip_address}:{port_number}/login
+```
+
+Example 3 - Get user by username:
+
+```sh
+curl -X GET http://<ip-address>:<post>/user?username=<username>
 ```
 
 When you log in successfully you will receive a Token in the response header looking like this `Authorization: Bearer  xxx.yyy.zzz`
@@ -103,11 +110,10 @@ Important `/login` status codes
 | --- | --- | --- | --- | --- | --- |
 | 1 | GET | api/post?page=<page_number> | Get all posts. | List og post objects. If no results you receive an empty list. | No |
 | 2 | GET | api/post?id=<post_id> | Get single post by id and all child posts | Single post object and a list of comments if any | No |
-| 3 | GET | api/user?username=<username> | Get user by username | Single user | No |
-| 4 | POST | api/post | Create new post | void | Yes |
-| 5 | POST | api/post/vote | Upvote or downvote a post | void | Yes |
-| 6 | PUT | api/post?id=<post_id> | Update post by id | void | Yes |
-| 7 | DELETE | api/post/id=<post_id> | Deletes post by id | void | Yes |
+| 3 | POST | api/post | Create new post | void | Yes |
+| 4 | POST | api/post/vote | Upvote or downvote a post | void | Yes |
+| 5 | PUT | api/post?id=<post_id> | Update post by id | void | Yes |
+| 6 | DELETE | api/post/id=<post_id> | Deletes post by id | void | Yes |
 </br>
 
 Example 1 - Get all posts:
@@ -115,22 +121,16 @@ Example 1 - Get all posts:
 Obs: You have to specify the page number starting from 1. Default page size is 20. Every page request will return 20 or less posts. This way you can optimze perfomance of your website.
 
 ```sh
-curl -X GET http://<ip-address>:<post>/post?page=1
+curl -X GET http://<ip-address>:<post>/api/post?page=1
 ```
 
 Example 2 - Get single post by id and all child posts:
 
 ```sh
-curl -X GET http://<ip-address>:<post>/post?id=dqwdh12e8ewdwjshjk
+curl -X GET http://<ip-address>:<post>/api/post?id=dqwdh12e8ewdwjshjk
 ```
 
-Example 3 - Get user by username:
-
-```sh
-curl -X GET http://<ip-address>:<post>/user?username=<username>
-```
-
-Example 4 - Create new post:
+Example 3 - Create new post:
 
 Obs: Remeber to switch the token to a valid token. The one provided will not work
 
@@ -144,7 +144,7 @@ curl -H "Content-Type: application/json" -H @{'Authorization'='Bearer eyJhbGciOi
 }'  http://<ip-address>:<post>/post
 ```
 
-Example 5 - Upvote or downvote a post:
+Example 4 - Upvote or downvote a post:
 
 Obs: the `mode` parameter in the body can either be `up` or `down`.
 
@@ -156,7 +156,7 @@ curl -H "Content-Type: application/json" -H @{'Authorization'='Bearer eyJhbGciOi
 }'  http://<ip-address>:<post>/api/post/vote
 ```
 
-Example 6 - Update post by id:
+Example 5 - Update post by id:
 
 ```sh
 curl -H "Content-Type: application/json" -X PUT -d '{
@@ -164,7 +164,7 @@ curl -H "Content-Type: application/json" -X PUT -d '{
 }'  http://<ip-address>:<post>/post?id=q38w4fyiesldhflskedfhk
 ```
 
-Example 7 - Delete post by id:
+Example 6 - Delete post by id:
 
 ```sh
 curl -X DELETE http://<ip-address>:<post>/post?id=982347r87whf47xcf
