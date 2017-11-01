@@ -103,7 +103,7 @@ Important `/login` status codes
 | --- | --- | --- | --- | --- | --- |
 | 1 | GET | api/post?page=<page_number> | Get all posts. | List og post objects. If no results you receive an empty list. | No |
 | 2 | GET | api/post?id=<post_id> | Get single post by id and all child posts | Single post object and a list of comments if any | No |
-| 3 | GET | api/post?username=<username> | Get user by username | Single user | No |
+| 3 | GET | api/user?username=<username> | Get user by username | Single user | No |
 | 4 | POST | api/post | Create new post | void | Yes |
 | 5 | POST | api/post/vote | Upvote or downvote a post | void | Yes |
 | 6 | PUT | api/post?id=<post_id> | Update post by id | void | Yes |
@@ -115,14 +115,18 @@ Example 1 - Get all posts:
 Obs: You have to specify the page number starting from 1. Default page size is 20. Every page request will return 20 or less posts. This way you can optimze perfomance of your website.
 
 ```sh
-curl http://<ip-address>:<post>/post?page=1
+curl -X GET http://<ip-address>:<post>/post?page=1
 ```
 
-Example 2 - Get single post by id:
+Example 2 - Get single post by id and all child posts:
 
 ```sh
-curl http://<ip-address>:<post>/post?id=dqwdh12e8ewdwjshjk
+curl -X GET http://<ip-address>:<post>/post?id=dqwdh12e8ewdwjshjk
 ```
+
+Example 3 - Get user by username:
+
+
 
 Example 3 - Create new post:
 
