@@ -51,6 +51,29 @@ An example of a comment:
 
 ```  
 
+Obs: Regarding other required post fields.
+
+In the assignment we are specifically told that our backend is supposed to handle fields like `hanesst_id`, `post_parent`, `username` and `password`. Here is an exmaple provided by the assigment:
+
+```sh
+
+{
+	"post_title": "Y Combinator", 
+ 	"post_text": "", 
+ 	"hanesst_id": 1, 
+ 	"post_type": "story", 
+ 	"post_parent": -1, 
+ 	"username": "pg", 
+ 	"pwd_hash": "Y89KIJ3frM", 
+	 "post_url": "http://ycombinator.com"
+}
+
+```
+
+Our API is able to digest this kind of request, and the fields will be stored in the Post object. But we do not really use `hanesst_id`, `post_parent`, `username` and `password` to anything other than making sure that our api meets the assignment requirements.
+
+Th Post object creates it's own unique id called `id` (not the hanesst id) and another field called `parent` (not post_parent). These values are of type String. So whenever our frontend makes request to the backend we will never use `hanesst_id`, `post_parent`. We will use our own fields/attributes.   
+
 ## User endpoints
 
 Authentication
